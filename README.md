@@ -2,18 +2,20 @@
 
 An e-commerce application where you can buy plants
 
-To build the foundation of the application, I utilized Android Jetpack components. One of these components that I preferred using was the Navigation Component. The Navigation Component simplifies navigation between different screens of the application and provides a single place to manage application navigation.
+To build the foundation of the application, I utilized Android Jetpack components and followed the MVVM (Model-View-ViewModel) architecture to ensure clean and modular code. The MVVM architecture separates the concerns of the application into three distinct layers: the Model, View, and ViewModel.
 
-For registration and login processes, I implemented Firebase Auth, and I used Firestore to store users' profile photos.
+Using the MVVM pattern, I created the Model layer to represent the data and business logic of the application. Firebase Auth was implemented for registration and login processes, and Firestore was used to store users' profile photos.
 
-To fetch data from the internet, I created a simple API using GitHub Gist and retrieved the data over the internet using the Retrofit library.
+To enhance the code readability and reduce boilerplate, I leveraged data binding. Data binding allowed me to establish a direct connection between the UI components and the underlying data, enabling seamless updates and reducing the need for manual UI updates.
 
-Instead of RecyclerView, I opted for ListAdapter to automatically update the data by leveraging the DiffCallback method.
+For data retrieval from the internet, I created a simple API using GitHub Gist and utilized the Retrofit library to handle network requests efficiently.
 
-To provide real-time updates in the user interface, I chose to use the LiveData library.
+To ensure efficient updates and better performance, I replaced the conventional RecyclerView with ListAdapter, which leverages the DiffCallback method to automatically update the data.
 
-I implemented the functionality of adding products to the cart or favorites by saving the data in SQLite Room database.
+To provide real-time updates and maintain UI consistency, I incorporated LiveData, a lifecycle-aware data holder, into the ViewModel layer. LiveData enabled me to observe changes in data and propagate them to the UI seamlessly.
 
-For dependency management, I used Hilt Dagger library. Hilt simplifies dependency injection, allowing better management of dependencies between different components of the application and preventing code repetition.
+The functionality of adding products to the cart or favorites was implemented using SQLite Room database. Room allowed me to create a local database with clean and efficient queries, ensuring smooth user experience and data synchronization.
 
-By providing this more professional description, an employer will gain a better understanding of how the application was developed and which components were used.
+In terms of dependency management, I utilized the Hilt Dagger library. Hilt simplifies dependency injection, enabling better management of dependencies between different components of the application and reducing code duplication.
+
+By incorporating the MVVM architecture, data binding, and other clean coding practices, I aimed to create a well-structured, maintainable, and efficient application. This approach enhances readability, testability, and scalability, allowing for easier collaboration and future enhancements.
