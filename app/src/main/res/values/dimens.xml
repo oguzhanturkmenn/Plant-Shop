@@ -1,0 +1,105 @@
+<resources>
+
+    <!--Margin Size-->
+    <dimen name="line_left_right_margin">10dp</dimen>
+    <dimen name="common_right_margin">20dp</dimen>
+    <dimen name="common_left_margin">20dp</dimen>
+    <dimen name="common_top_margin">15dp</dimen>
+    <dimen name="common_bottom_margin">15dp</dimen>
+    <dimen name="post_detail_like_count_size">14sp</dimen>
+    <dimen name="post_target_size">12sp</dimen>
+    <dimen name="post_content_size">14sp</dimen>
+    <dimen name="profile_space_margin">6.3dp</dimen>
+    <dimen name="header_margin_screen">17dp</dimen>
+    <dimen name="general_margin_screen">10dp</dimen>
+    <!--Text size-->
+    <dimen name="comment_content_size">14sp</dimen>
+    <dimen name="common_text_size_l">20sp</dimen>
+    <dimen name="common_text_size">14sp</dimen>
+    <dimen name="post_username_size">14sp</dimen>
+    <dimen name="post_time_size">12sp</dimen>
+    <dimen name="post_footer_size">12sp</dimen>
+    <!--Layout size-->
+    <dimen name="profile_image_size">48dp</dimen>
+    <dimen name="profile_image_size_small">32dp</dimen>
+    <dimen name="layout_header_height_size">56dp</dimen>
+
+
+
+
+    <!--    10/04/2021 redesign-->
+
+    <dimen name="button_height_l">50dp</dimen>
+    <dimen name="button_height_m">40dp</dimen>
+    <dimen name="content_height_m">250dp</dimen>
+    <dimen name="header_width">80dp</dimen>
+
+
+    <!--Layout size-->
+    <dimen name="notification_height">80dp</dimen>
+
+
+
+    ------
+
+
+
+    <dimen name="action_bar_height">56dp</dimen>
+    <dimen name="action_bar_width">80dp</dimen>
+    <dimen name="navigation_height">56dp</dimen>
+    <dimen name="navigation_height_s">42dp</dimen>
+    <dimen name="input_height">56dp</dimen>
+    <dimen name="input_height_s">40dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="button_height_s">45dp</dimen>
+    <dimen name="button_height_xs">35dp</dimen>
+
+
+    <!--Image Size-->
+    <dimen name="image_size_s">40dp</dimen>
+    <dimen name="image_size_m">48dp</dimen>
+    <dimen name="image_size_l">80dp</dimen>
+    <dimen name="image_size_xl">116dp</dimen>
+    <dimen name="image_size_xxl">180dp</dimen>
+
+    <!--UI Margin size-->
+    <dimen name="margin_4xl">70dp</dimen>
+    <dimen name="margin_3xl">60dp</dimen>
+    <dimen name="margin_xxl">40dp</dimen>
+    <dimen name="margin_xl">30dp</dimen>
+    <dimen name="margin_l">20dp</dimen>
+    <dimen name="margin_m">16dp</dimen>
+    <dimen name="margin_s">10dp</dimen>
+    <dimen name="margin_xs">8dp</dimen>
+    <dimen name="margin_xxs">5dp</dimen>
+    <dimen name="margin_3xs">3dp</dimen>
+
+
+    <!-- Icon Sie   -->
+    <dimen name="icon_m">40dp</dimen>
+    <dimen name="icon_l">50dp</dimen>
+    <dimen name="icon_xl">60dp</dimen>
+
+    <!--Font Size-->
+    <dimen name="font_4xl">40sp</dimen>
+    <dimen name="font_3xl">30sp</dimen>
+    <dimen name="font_xxl">20sp</dimen>
+    <dimen name="font_xl">18sp</dimen>
+    <dimen name="font_l">16sp</dimen>
+    <dimen name="font_m">15sp</dimen>
+    <dimen name="font_s">14sp</dimen>
+    <dimen name="font_xs">13sp</dimen>
+    <dimen name="font_xxs">12sp</dimen>
+    <dimen name="font_3xs">11sp</dimen>
+
+
+
+    <!--CardView settings-->
+
+    <dimen name="card_elevation">5dp</dimen>
+    <dimen name="card_max_elevation">1dp</dimen>
+    <dimen name="card_radius">8dp</dimen>
+    <dimen name="card_radius_more">15dp</dimen>
+    <dimen name="card_width_m">100dp</dimen>
+
+</resources>

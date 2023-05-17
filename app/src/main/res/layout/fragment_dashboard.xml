@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="DashboardAdapter"
+            type="com.oguzhanturkmen.myplantapp.ui.dashboard.DashboardAdapter" />
+
+        <variable
+            name="User"
+            type="com.oguzhanturkmen.myplantapp.data.models.User" />
+
+        <variable
+            name="DashboardFragment"
+            type="com.oguzhanturkmen.myplantapp.ui.dashboard.DashboardFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dashboard_background"
+        tools:context=".ui.dashboard.DashboardFragment">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_dashboard_proile_logo"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginTop="@dimen/margin_xxl"
+                        android:layout_marginEnd="@dimen/margin_m"
+                        android:layout_marginBottom="@dimen/margin_xxl"
+                        android:src="@drawable/profile"
+                        app:downloadImage="@{User.ppUrl}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_welcome"
+                        android:layout_width="@dimen/_220sdp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/amaranth_italic"
+                        android:text="@string/welcome_plant"
+                        android:textColor="@color/eden"
+                        android:textSize="@dimen/font_3xl"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/img_dashboard_proile_logo"
+                        app:layout_constraintEnd_toStartOf="@+id/img_dashboard_proile_logo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/img_dashboard_proile_logo" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/dashboard_bottom_background"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_140sdp"
+                        android:layout_margin="@dimen/margin_xl"
+                        android:background="@drawable/banner_background">
+
+
+                        <ImageView
+                            android:id="@+id/img_plant_in_banner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/human"
+                            app:layout_constraintBottom_toBottomOf="@+id/img_circle"
+                            app:layout_constraintEnd_toEndOf="@+id/img_circle"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/img_circle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/circle_white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_until"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_m"
+                            android:layout_marginTop="@dimen/margin_m"
+                            android:text="@string/until"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/common_text_size_l"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_discount_date"
+                            android:layout_width="@dimen/_120sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_m"
+                            android:text="@string/discount_date"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/common_text_size_l"
+                            app:layout_constraintStart_toStartOf="@+id/tv_until"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_until" />
+
+                        <TextView
+                            android:id="@+id/tv_percent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/percent_fifty"
+                            android:textColor="@color/brown"
+                            android:textSize="@dimen/font_4xl"
+                            app:layout_constraintStart_toStartOf="@+id/tv_discount_date"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_discount_date" />
+
+                        <TextView
+                            android:id="@+id/tv_discount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/discount"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/common_text_size_l"
+                            app:layout_constraintStart_toStartOf="@+id/tv_percent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_percent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tv_see_all_plants"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_l"
+                        android:onClick="@{()-> DashboardFragment.letsSeeAllPlantsClicked()}"
+                        android:text="@string/see_all_plants"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/common_text_size_l"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/margin_m">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_dashboard"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/margin_3xs"
+                            android:layout_marginEnd="@dimen/margin_3xs"
+                            android:adapter="@{DashboardAdapter}"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

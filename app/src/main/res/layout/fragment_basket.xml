@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="BasketAdapter"
+            type="com.oguzhanturkmen.myplantapp.ui.basket.BasketAdapter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.basket.BasketFragment">
+
+
+        <ImageView
+            android:id="@+id/img_no_product"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/noproduct"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/bottom_card_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_s"
+                android:layout_marginTop="@dimen/margin_l"
+                android:layout_marginRight="@dimen/margin_s"
+                android:layout_marginBottom="@dimen/margin_s"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_amount_basket_fragment"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/total_amount"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/common_text_size_l"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_total_price_basket_fragment"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="$120"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/common_text_size_l"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_paynow"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/detail_page_cart_button"
+                android:drawableEnd="@drawable/ic_arrow_forward"
+                android:text="@string/pay_now"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_basket"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adapter="@{BasketAdapter}"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_card_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

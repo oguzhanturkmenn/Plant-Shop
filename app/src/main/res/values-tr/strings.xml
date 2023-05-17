@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">MyPlantApp</string>
+
+    <string name="next">İleri</string>
+    <string name="previous">Önceki</string>
+    <string name="total_tl">"%1$s $"</string>
+    <string name="zero">"0$"</string>
+    <string name="empty_bag">"Boş Sepet"</string>
+    <string name="cardholder_name">Kart İsmi</string>
+    <string name="card_number">Kart Numarası</string>
+    <string name="expiry_date">Son Kullanma Tarihi</string>
+    <string name="cvv">Cvv</string>
+    <string name="total_amount">Toplam Hesap: </string>
+    <string name="pay_now">ŞİMDİ ÖDE!</string>
+    <string name="welcome_plant">Plant Shop Hoşgeldiniz</string>
+    <string name="until">Kadar</string>
+    <string name="discount_date">20 Ocak ve 20 Ekim</string>
+    <string name="percent_fifty">%50</string>
+    <string name="discount">İndirim!!</string>
+    <string name="see_all_plants">Tüm Bitkileri Görelim?</string>
+    <string name="plant_app">Plant Shop</string>
+    <string name="login">Giriş</string>
+    <string name="btn_login">GİRİŞ</string>
+    <string name="email">eMail</string>
+    <string name="enter_email">eMail giriniz</string>
+    <string name="password">Şifre</string>
+    <string name="password_again">Şifre yeniden</string>
+    <string name="enter_password">Şifrenizi giriniz</string>
+    <string name="dont_you_register">Hesabın yok mu? Kaydol</string>
+    <string name="already_have_account">Hesabın var mı? Giriş yap</string>
+    <string name="or">YA DA</string>
+    <string name="payment_method">Ödeme metodunu gir</string>
+    <string name="payment_done">Ödeme Onaylandı!!</string>
+    <string name="all_products">Tüm Ürünler</string>
+    <string name="plant_name">Plant Name</string>
+    <string name="plant_description">Plant Description</string>,
+    <string name="btn_add_basket">SEPETE EKLE</string>
+    <string name="btn_change_pp">PP DEĞİŞ</string>
+    <string name="btn_back_to_shopping">ALIŞVERİŞE DÖN</string>
+    <string name="thanks">Bizi seçtiğiniz için teşekkürler</string>
+    <string name="profile">Profil</string>
+    <string name="btn_sign_out">ÇIKIŞ YAP</string>
+    <string name="sign_up">Kaydol</string>
+    <string name="btn_sign_up">KAYDOL</string>
+    <string name="address">Adres</string>
+    <string name="pay">Şimdi öde</string>
+    <string name="required_card_name">Lütfen kart ismi giriniz</string>
+    <string name="required_card_number">Lütfen kart numarası giriniz</string>
+    <string name="required_expiry">Lütfen skt giriniz</string>
+    <string name="required_address">Lütfen adres giriniz</string>
+    <string name="required_cvv">Lütfen CVV giriniz</string>
+    <string name="success_payment">"Teşekkürler! Ödemen %1$s Tl alınmıştır".</string>
+    <string name="home">Ana Sayfa</string>
+    <string name="plants">Bitkiler</string>
+    <string name="basket">Sepet</string>
+    <string name="favorites">Favoriler</string>
+    <string name="confirm_remove_plant">Bu ürünü sepetten kaldırmayı onaylıyor musunuz?</string>
+    <string name="cancel">Vazgeç</string>
+    <string name="delete">Sil</string>
+    <string name="cant_be_empty">Boş Olamaz!</string>
+    <string name="added_to_basket">Sepete Eklendi!</string>
+    <string name="register_done">Üyelik Başarıyla Tamamlanmıştır!</string>
+
+
+</resources>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="plant"
+            type="com.oguzhanturkmen.myplantapp.data.models.Plant" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_xxs"
+        android:layout_marginVertical="@dimen/margin_xxs">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_3xs"
+            android:layout_marginVertical="@dimen/margin_xs"
+            app:cardCornerRadius="@dimen/card_radius_more"
+            app:cardElevation="@dimen/card_elevation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RatingBar
+                    android:id="@+id/rating_basket"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_m"
+                    android:layout_marginTop="@dimen/margin_l"
+                    android:numStars="5"
+                    android:rating="5"
+                    app:layout_constraintStart_toEndOf="@+id/img_product_img_basketrow"
+                    app:layout_constraintTop_toBottomOf="@id/tv_plant_name_basketrow" />
+
+                <TextView
+                    android:id="@+id/tv_plant_price_basketrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_xl"
+                    android:setText='@{String.valueOf(plant.plantPrice) + "$"}'
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/common_text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/textView4"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <ImageView
+                    android:id="@+id/img_product_img_basketrow"
+                    android:layout_width="@dimen/_95sdp"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_marginVertical="@dimen/margin_xs"
+                    android:layout_marginLeft="@dimen/margin_s"
+                    android:downloadUrl="@{plant.plantImage}"
+                    android:src="@drawable/plantlogo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_plant_name_basketrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_m"
+                    android:layout_marginTop="@dimen/margin_3xl"
+                    android:maxLines="3"
+                    android:text="@{plant.plantName}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/common_text_size"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/img_product_img_basketrow"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btn_delete_basket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xs"
+                    android:layout_marginEnd="@dimen/margin_xs"
+                    android:background="@drawable/ic_close"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_xxl"
+                    android:layout_marginBottom="@dimen/margin_xl"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/basketViewsContstraintLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_m"
+                    android:layout_marginTop="@dimen/margin_m"
+                    app:layout_constraintStart_toEndOf="@+id/img_product_img_basketrow"
+                    app:layout_constraintTop_toBottomOf="@+id/rating_basket">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btn_minus"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:backgroundTint="@color/bg_action_bar"
+                        android:src="@drawable/ic_minus"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_plant_count_basketrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_xxs"
+                        android:setText="@{String.valueOf(plant.count)}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/common_text_size_l"
+                        app:layout_constraintStart_toEndOf="@+id/btn_minus"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/btn_plus"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_marginStart="@dimen/margin_xxs"
+                        android:backgroundTint="@color/bg_action_bar"
+                        android:src="@drawable/ic_plus"
+                        app:layout_constraintStart_toEndOf="@+id/tv_plant_count_basketrow"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

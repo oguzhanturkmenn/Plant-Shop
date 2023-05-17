@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="LoginFragment"
+            type="com.oguzhanturkmen.myplantapp.ui.login.LoginFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.login.LoginFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/img_background_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="260dp"
+                    android:background="@drawable/atop_background"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/img_circle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/circles"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/img_plant_logo"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_marginBottom="@dimen/margin_xxl"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_background_login"
+                    app:layout_constraintEnd_toEndOf="@+id/img_background_login"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/img_background_login"
+                    app:srcCompat="@drawable/plantlogo" />
+
+
+                <TextView
+                    android:id="@+id/tv_app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_l"
+                    android:text="@string/plant_app"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_3xl"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/img_plant_logo"
+                    app:layout_constraintStart_toStartOf="@+id/img_plant_logo"
+                    app:layout_constraintTop_toBottomOf="@+id/img_plant_logo" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_4xl"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_xl"
+                android:layout_marginTop="@dimen/margin_m"
+                android:layout_marginEnd="@dimen/margin_xl"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_eMail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/common_text_size_l" />
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xs"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="@string/enter_email"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/margin_xs"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/common_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_xl"
+                android:layout_marginTop="@dimen/margin_m"
+                android:layout_marginEnd="@dimen/margin_xl"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/common_text_size_l" />
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_xs"
+                    android:background="@drawable/edittext_background"
+                    android:ems="10"
+                    android:hint="@string/enter_password"
+                    android:inputType="textPassword"
+                    android:padding="@dimen/margin_xs"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/common_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_xs"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/tvdontyouregister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xl"
+                android:onClick="@{() -> LoginFragment.goToSignup(tvdontyouregister)}"
+                android:text="@string/dont_you_register"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/common_text_size" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_login"
+                style="@android:style/Widget.Button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_xl"
+                android:layout_marginBottom="@dimen/margin_xl"
+                android:background="@drawable/banner_background"
+                android:onClick="@{() -> LoginFragment.loginClicked(etEmail.getText().toString(),etPassword.getText().toString())}"
+                android:text="@string/btn_login"
+                android:textColor="@color/white"
+                android:textSize="@dimen/common_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

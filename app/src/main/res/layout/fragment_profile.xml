@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="User"
+            type="com.oguzhanturkmen.myplantapp.data.models.User" />
+
+        <variable
+            name="ProfileFragment"
+            type="com.oguzhanturkmen.myplantapp.ui.profile.ProfileFragment" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.profile.ProfileFragment">
+
+
+        <View
+            android:id="@+id/img_background_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="260dp"
+            android:background="@drawable/atop_background"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_circle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/circles"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_profile_picture"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/margin_3xl"
+            android:src="@drawable/profile"
+            app:downloadImage="@{User.ppUrl}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_change_pp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_s"
+            android:background="@drawable/banner_background"
+            android:onClick="@{() -> ProfileFragment.loadProfileImageClick()}"
+            android:text="@string/btn_change_pp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/img_profile_picture"
+            app:layout_constraintStart_toStartOf="@id/img_profile_picture"
+            app:layout_constraintTop_toBottomOf="@id/img_profile_picture" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_l"
+            android:layout_marginTop="@dimen/margin_xl"
+            android:layout_marginEnd="@dimen/margin_l"
+            android:layout_marginBottom="@dimen/margin_m"
+            android:background="@drawable/profile_white_background"
+            android:elevation="@dimen/card_elevation"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_change_pp">
+
+            <TextView
+                android:id="@+id/tv_profile_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_l"
+                android:text="@string/profile"
+                android:textColor="@color/green"
+                android:textSize="@dimen/font_4xl"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardview_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_xl"
+                android:layout_marginTop="@dimen/margin_s"
+                android:layout_marginEnd="@dimen/margin_xl"
+                app:cardCornerRadius="@dimen/card_radius_more"
+                app:cardElevation="@dimen/card_elevation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_profile_text"
+                app:strokeColor="@color/black"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_profile_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:paddingStart="@dimen/margin_s"
+                        android:paddingTop="@dimen/margin_s"
+                        android:text="@string/email"
+                        android:textColor="@color/eden"
+                        android:textSize="@dimen/common_text_size_l" />
+
+                    <TextView
+                        android:id="@+id/tv_profile_email_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_xxs"
+                        android:paddingStart="@dimen/margin_s"
+                        android:paddingTop="@dimen/margin_xxs"
+                        android:text="@{User.userEmail.toString()}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/common_text_size" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_signout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxl"
+                android:backgroundTint="@color/red"
+                android:background="@drawable/banner_background"
+                android:onClick="@{()-> ProfileFragment.logout()}"
+                android:text="@string/btn_sign_out"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardview_email" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/margin_l"
+                android:onClick="@{()-> ProfileFragment.changeLanguage()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/language" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

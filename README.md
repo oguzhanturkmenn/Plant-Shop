@@ -1,0 +1,3 @@
+# PlantShop
+An e-commerce application where you can buy plants
+# In Progress...
